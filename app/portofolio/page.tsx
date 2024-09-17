@@ -1,9 +1,9 @@
 "use client";
 
 import { Eye, Wallet } from "lucide-react";
-import { Pie, Label, Bar, BarChart, PieChart } from "recharts";
+import { Pie, PieChart } from "recharts";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   ChartConfig,
@@ -26,8 +26,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useAssetContext } from "@/context/asset";
+
 import Hide from "@/components/hide";
+import { useAssetStore } from "@/providers/asset";
 
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
@@ -64,7 +65,8 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export default function View() {
-  const { canSee, toggleSeeAsset } = useAssetContext();
+  const canSee = useAssetStore((state) => state.canSee);
+  const toggleSeeAsset = useAssetStore((state) => state.toggleSeeAsset);
 
   return (
     <div className="grid grid-cols-12 mt-4">

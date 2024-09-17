@@ -1,4 +1,3 @@
-// src/stores/counter-store.ts
 import { createStore } from "zustand/vanilla";
 
 export type AssetState = {
@@ -15,9 +14,7 @@ export const defaultInitState: AssetState = {
   canSee: false,
 };
 
-export const createCounterStore = (
-  initState: AssetState = defaultInitState
-) => {
+export const createAssetStore = (initState: AssetState = defaultInitState) => {
   return createStore<AssetStore>()((set) => ({
     ...initState,
     toggleSeeAsset: () => set((prev) => ({ canSee: !prev.canSee })),
