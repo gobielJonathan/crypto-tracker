@@ -1,0 +1,41 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
+export default function Trending() {
+  return (
+    <>
+      <Table className="mt-4">
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">#</TableHead>
+            <TableHead>Name</TableHead>
+            <TableHead>Price</TableHead>
+            <TableHead className="text-right">24h</TableHead>
+            <TableHead className="text-right">7d</TableHead>
+            <TableHead className="text-right">30d</TableHead>
+            <TableHead className="text-right">Market Cap</TableHead>
+            <TableHead className="text-right">Volume(24h)</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell className="font-medium">INV001</TableCell>
+            <TableCell>Paid</TableCell>
+            <TableCell>Credit Card</TableCell>
+            <TableCell className="text-right">$250.00</TableCell>
+            <TableCell className="text-right">$250.00</TableCell>
+            <TableCell className="text-right">$250.00</TableCell>
+            <TableCell className="text-right">$250.00</TableCell>
+            <TableCell className="text-right">$250.00</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </>
+  );
+}
